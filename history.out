@@ -1,0 +1,27 @@
+    1  cat /etc/shadow
+    2  cat /etc/passwd
+    3  man usermod 
+    4  groupadd students
+    5  useradd -u 1234 -G students user1
+    6  passwd user1
+    7  chage -M 90 user1
+    8  id user1
+    9  chage -l user1
+   10  find / -type f -perm -4000 2>/dev/null
+   11  pwd
+   12  sudo find / -type f -perm -4000 2>/dev/null > /tmp/set-uid.txt
+   13  cat /tmp/set-uid.txt
+   14  ps -eo pid,ruid,euid,comm | awk '$3==0 && $2!=0'
+   15  ps -eo pid,ruid,euid,comm | awk '$3==0 && $2!=0' > /tmp/euid0__processes.txt
+   16  cat /tmp/euid0__processes.txt
+   17  cp /bin/cat /home/user1/mycat
+   18  chown root:root /home/user1/mycat
+   19  chmod u+s /home/user1/mycat
+   20  ls -l /home/user1/mycat
+   21  cp /bin/chown /home/user1/mychown
+   22  setcap cap_chown=ep /home/user1/mychown
+   23  getcap /home/user1/mychown
+   24  visudo
+   25  sudo visudo -c
+   26  372237
+   27  history > ~/history.out 
